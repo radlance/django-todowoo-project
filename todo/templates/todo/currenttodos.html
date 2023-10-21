@@ -10,6 +10,15 @@
 {% block content %}
 Current
 
+<ul>
+    {% for todo in todos %}
+
+    <li>{{ view }}
+        {% if todo.important %}
+        <b>{% endif %}<a href="{% url 'viewtodo'  todo.id  %}">{{ todo.title }}</a>{% if todo.important %}</b>
+        {% endif %}{% if todo.memo %} - {{ todo.memo }}{% endif %}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
 </body>
 </html>

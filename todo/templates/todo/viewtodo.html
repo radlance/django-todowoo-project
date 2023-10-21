@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view todo</title>
+</head>
+<body>
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+{{ error }}
+{{ todo.title }}
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}
+
+</body>
+</html>
