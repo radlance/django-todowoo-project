@@ -1,15 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../../static/todo/css/home.css">
+
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-{% extends 'todo/base.html' %}
 
-{% block content %}
-Home
+    <div class="main">
+        <div class="table1">
+            <img src="../../static/todo/images/logo.png" class="home-logo">
 
-{% endblock %}
+            {% extends 'todo/base.html' %}
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>
+
