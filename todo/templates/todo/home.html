@@ -16,6 +16,10 @@
             {% extends 'todo/base.html' %}
 
             {% block content %}
+            <div class="main-buttons">
+                <a href="{% url 'signupuser' %}">Sign Up</a>
+                <a href="{% url 'loginuser' %}">Log in</a>
+            </div>
             {% endblock %}
         </div>
     </div>

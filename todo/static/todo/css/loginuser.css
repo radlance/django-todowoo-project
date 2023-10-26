@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+}
+
+br {
+    display: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 99vh;
+}
+
+.table1 {
+    border: none;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 650px;
+    border-radius: 30px;
+    font-size: 80px;
+    line-height: 120px;
+    background-color: white;
+    box-shadow: 0 23px 34px 0 #2339372B;
+    padding-bottom: 150px;
+}
+
+.form-group {
+    font-size: 20px;
+    height: 100px;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    height: 30px;
+}
+
+.sign-up-link {
+    font-size: 20px;
+    text-align: center;
+}
+
+.login {
+    border: green 1px solid;
+}
+
+input {
+    scale: 2;
+    background-color: white;
+    font-family: Calibri;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+    user-select: none;
+    text-align:center;
+}
+
+label {
+    margin: 12px;
+}
+
+button {
+    scale: 2;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: white;
+    font-family: Calibri;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.button-location {
+    text-align: center;
+
+}
+hr {
+    width: 286px;
+
+}
+
+.content {
+    margin-bottom: 10px;
+}
+
+.sign-up-link {
+    height: 50px;
+}
+
+::-webkit-input-placeholder {
+    font-family: Calibri;
+}
