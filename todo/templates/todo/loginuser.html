@@ -14,11 +14,7 @@
             <h2>Log in</h2>
             <div>
                 <div>
-                    {% if error %}
-                        <div>
-                            {{ error }}
-                        </div>
-                    {% endif %}
+
                     <form method="POST">
                         {% csrf_token %}
                         <div class="content">
@@ -33,6 +29,11 @@
                                 <input type="password" name="password" id="password">
                             </div>
                         </div>
+                        {% if error %}
+                        <div class="error">
+                            {{ error }}
+                        </div>
+                    {% endif %}
                         <div class="button-location">
 
                             <button type="submit">Log in</button>

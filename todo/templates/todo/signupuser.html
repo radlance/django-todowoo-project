@@ -3,18 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>signup</title>
+    <link rel="stylesheet" href="../../static/todo/css/signupuser.css">
 </head>
 <body>
 {% extends 'todo/base.html' %}
 
 {% block content %}
-<h1>Sign Up</h1>
-<h2>{{ error }}</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
+<div class="main">
+    <div class="table1">
+        <div>
+            <h2>Sign Up</h2>
+        </div>
+        <div>
+            <div class>
+                {% if error %}
+
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Your username must be unique." autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password1">Password</label>
+                        <input type="password" name="password1" id="password1">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" name="password2" id="password2">
+                    </div>
+                    <div class="error1">
+                        {{ error }}
+                    </div>
+                    <div class="button-location">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div class="log-in-link">
+                <div class="hr1"><hr></div>
+                    Do you already have an account? <a href="{% url 'loginuser' %}">Log in here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 </body>
 </html>

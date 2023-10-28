@@ -27,7 +27,8 @@ br {
     line-height: 120px;
     background-color: white;
     box-shadow: 0 23px 34px 0 #2339372B;
-    padding-bottom: 150px;
+    padding-bottom: 90px;
+    padding-top: 60px;
 }
 
 .form-group {
@@ -87,24 +88,35 @@ button {
 }
 hr {
     width: 286px;
-
 }
 
 .content {
     margin-bottom: 10px;
 }
 
-.sign-up-link {
+.log-in-link {
     height: 50px;
+    font-size: 20px;
+    text-align: center;
 }
 
 ::-webkit-input-placeholder {
     font-family: Calibri;
 }
 
-.error {
+.error1 {
     height: 20px;
     font-size: 15px;
     color: red;
     text-align: center;
+}
+
+.hr1 {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+::-webkit-input-placeholder {
+    font-size: 8px;
 }

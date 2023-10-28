@@ -9,6 +9,17 @@ from .models import Todo
 from django.contrib.auth.decorators import login_required
 
 
+def login_forbidden(view_func):
+    def wrapper(request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('currenttodos')
+        else:
+            return view_func(request, *args, **kwargs)
+
+    return wrapper
+
+
+@login_forbidden
 def home(request):
     return render(request, 'todo/home.html')
 
@@ -41,7 +52,7 @@ def loginUser(request):
                           {'form': AuthenticationForm(), 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('home')
+            return redirect('currenttodos')
 
 
 def logoutUser(request):
