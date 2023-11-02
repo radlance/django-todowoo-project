@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../static/todo/css/base.css">
-    <title></title>
 </head>
 <body>
 {% if user.is_authenticated %}
+<header>
+    <a href="{% url 'currenttodos' %}">Current
+        <div class="header-logo"><img src="../../static/todo/images/logo.png"></div>
+    </a>
 
-    Logged In as {{ user.username }}
-<a href="{% url 'createtodo' %}">Create</a>
-<a href="{% url 'currenttodos' %}">Current</a>
-<a href="{% url 'completedtodos' %}">Completed</a>
+    <a href="{% url 'createtodo' %}">Create</a>
+    <a href="{% url 'currenttodos' %}">Current</a>
+    <a href="{% url 'completedtodos' %}">Completed</a>
+        <div class="status-and-button">
+        <form action="{% url 'logoutuser' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="logout">Logout</button>
+        </form>
+        </div>
+</header>
 
-<form action="{% url 'logoutuser' %}" method="POST">
-    {% csrf_token %}
-    <button type="submit">Logout</button>
-</form>
 {% else %}
     </div>
 {% endif %}

@@ -1,4 +1,6 @@
-
+* {
+    margin: 0;
+}
 a {
     text-decoration: none;
     color: black;
@@ -13,3 +15,37 @@ body {
     font-family: Calibri;
 }
 
+.header-logo {
+    width: 200px;
+    height: 100px;
+    scale: 0.4;
+    margin-bottom: 195px;
+    margin-right: 50px;
+}
+
+
+header {
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+
+}
+
+.status-and-button {
+    display: flex;
+    text-align: center;
+    margin-right: 90px;
+}
+
+.logout {
+    width: 130px;
+    height: 40px;
+    background-color: #d4d4d4;
+    border: 1px black solid;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Calibri;
+}

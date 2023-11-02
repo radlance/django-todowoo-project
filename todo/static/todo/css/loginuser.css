@@ -79,6 +79,7 @@ button {
     font-family: Calibri;
     border: 1px solid;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .button-location {

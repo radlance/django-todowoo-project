@@ -24,6 +24,7 @@ def home(request):
     return render(request, 'todo/home.html')
 
 
+@login_forbidden
 def signupUser(request):
     if request.method == 'GET':
         return render(request, 'todo/signupuser.html', {'form': UserCreationForm()})
@@ -42,6 +43,7 @@ def signupUser(request):
                                                         'error': 'Password did not match'})
 
 
+@login_forbidden
 def loginUser(request):
     if request.method == 'GET':
         return render(request, 'todo/loginuser.html', {'form': AuthenticationForm()})
@@ -79,7 +81,7 @@ def createTodo(request):
 
 @login_required
 def currentTodos(request):
-    todos = Todo.objects.filter(user=request.user.id, datecompleted__isnull=True)
+    todos = Todo.objects.filter(user=request.user.id, datecompleted__isnull=True).order_by('-important')
     return render(request, 'todo/currenttodos.html', {'todos': todos})
 
 

@@ -1,0 +1,36 @@
+.table1 {
+    border: none;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    width: 75%;
+    height: auto;
+    border-radius: 30px;
+    font-size: 35px;
+    line-height: 120px;
+    background-color: white;
+    box-shadow: 0 23px 34px 0 #2339372B;
+    padding: 40px 100px 90px 70px;
+    word-wrap: break-word;
+}
+
+.point {
+    /*background-color: red;*/
+
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 80px;
+}
+li {
+    list-style-type: square;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+
+}
