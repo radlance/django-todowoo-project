@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
     <meta charset="UTF-8">
     <title>current</title>
+    <link rel="stylesheet" href="../../static/todo/css/currenttodos.css">
+    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
 </head>
 <body>
-{% extends 'todo/base.html' %}
+    {% extends 'todo/base.html' %}
 
-{% block content %}
-Current
+    {% block content %}
+    <div class="main">
+        <div class="table1">
+            <h3 align="center">Completed Todos</h3>
+            <br>
+            {% if todos %}
+            <ul>
 
-<ul>
-    {% for todo in todos %}
+                {% for todo in todos %}
 
-    <li>
-        <a href="{% url 'viewtodo'  todo.id  %}">
-            {% if todo.important %}
-            <b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
-            {% endif %}{% if todo.memo %} - {{ todo.memo }}{% endif %}
-            {{ todo.datecompleted|date:"M j Y H:i" }}
-        </a>
-    </li>
-    {% endfor %}
-</ul>
-{% endblock %}
+                <li>
+                    <div class="point">
+                        <a href="{% url 'viewtodo'  todo.id  %}">
+                        {% if todo.important %}
+
+                        <b style=" border-radius: 10px; padding: 5px">{% endif %}{{ todo.title }}{% if todo.important %}</b>
+                        {% endif %}{% if todo.memo %} - {{ todo.memo }}{% endif %}
+                        {{ todo.datecompleted|date:"M j Y H:i" }}
+                        </a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <h3 align="center" style="font-weight: normal">No completed todos</h3>
+            {% endif %}
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>
+
+
