@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
     <meta charset="UTF-8">
-    <title>Createtodo</title>
+    <title>Create</title>
+    <link rel="stylesheet" href="../../static/todo/css/createtodo.css">
+    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
 </head>
 <body>
-{% extends 'todo/base.html' %}
+    {% extends 'todo/base.html' %}
 
-{% block content %}
-<h1>Create</h1>
-<h2>{{ error }}</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create</button>
-</form>
-{% endblock %}
+    {% block content %}
+    <div class="main">
+        <div class="table1">
+            <h2 align="center">Create</h2>
+            <h2>{{ error }}</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" name="title" id="title">
+                </div>
+
+                <div class="form-group">
+                <label for="memo">memo</label>
+                <textarea name="memo" id="memo"></textarea>
+               </div>
+
+                <div class="checkbox">
+                <label for="important" style="margin-right: 10px">important</label>
+                <input type="checkbox" name="important" id="important" style="scale: 1.6">
+                </div>
+                <div class="button-place">
+                    <button type="submit" class="button">Create</button>
+                </div>
+            </form>
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>
+
