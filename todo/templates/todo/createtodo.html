@@ -13,7 +13,6 @@
     <div class="main">
         <div class="table1">
             <h2 align="center">Create</h2>
-            <h2>{{ error }}</h2>
 
             <form method="POST">
                 {% csrf_token %}
@@ -28,9 +27,13 @@
                </div>
 
                 <div class="checkbox">
+
                 <label for="important" style="margin-right: 10px">important</label>
                 <input type="checkbox" name="important" id="important" style="scale: 1.6">
                 </div>
+                <h4>
+                {{ error }}
+                </h4>
                 <div class="button-place">
                     <button type="submit" class="button">Create</button>
                 </div>

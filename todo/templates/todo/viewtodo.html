@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
+    <title>view</title>
     <meta charset="UTF-8">
-    <title>view todo</title>
+    <title>Create</title>
+    <link rel="stylesheet" href="../../static/todo/css/createtodo.css">
+    <link rel="icon"  type="image/png" href="../../static/todo/images/favicon-16x16.png">
 </head>
 <body>
-{% extends 'todo/base.html' %}
+    {% extends 'todo/base.html' %}
 
-{% block content %}
+    {% block content %}
+    <div class="main">
+        <div class="table1">
+            <h2 align="center">{{ todo.title }}</h2>
 
-{{ error }}
-{{ todo.title }}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" name="title" id="title">
+                </div>
 
-<form method="POST">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit">Save</button>
-</form>
+                <div class="form-group">
+                <label for="memo">memo</label>
+                <textarea name="memo" id="memo"></textarea>
+               </div>
 
-<form method="POST" action="{% url 'completetodo' todo.id %}">
-    {% csrf_token %}
-    <button type="submit">Complete</button>
-</form>
+                <div class="checkbox">
 
-<form method="POST" action="{% url 'deletetodo' todo.id %}">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
-{% endblock %}
+                <label for="important" style="margin-right: 10px">important</label>
+                <input type="checkbox" name="important" id="important" style="scale: 1.6">
+                </div>
+                <h4 class="error-view">
+                {{ error }}
+                </h4>
 
+                <div class="button-place-view">
+                    <form method="POST">
+                    {% csrf_token %}
+                        <button type="submit" class="button-view">Save</button>
+                    </form>
+                    <form method="POST" action="{% url 'completetodo' todo.id %}" class="button-place-view">
+                        {% csrf_token %}
+                        <button type="submit" class="button-view">Complete</button>
+                    </form>
+
+                    <form method="POST" action="{% url 'deletetodo' todo.id %}" class="button-place-view">
+                        {% csrf_token %}
+                        <button type="submit" class="button-view">Delete</button>
+                    </form>
+                </div>
+            </form>
+
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>
+
+
+
+

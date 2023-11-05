@@ -51,7 +51,7 @@ def loginUser(request):
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
             return render(request, 'todo/loginuser.html',
-                          {'form': AuthenticationForm(), 'error': 'Username and password did not match'})
+                          {'form': AuthenticationForm(), 'error': 'Username and password did not match.'})
         else:
             login(request, user)
             return redirect('currenttodos')
@@ -103,7 +103,7 @@ def viewTodo(request, todo_pk):
             form.save()
             return redirect('currenttodos')
         except ValueError:
-            return render(request, 'todo/viewtodo.html', {'todo': todo, 'error': 'Bad info'})
+            return render(request, 'todo/viewtodo.html', {'todo': todo, 'error': 'Bad info.'})
 
 
 @login_required
